@@ -1,5 +1,7 @@
 * {
   background-color: lightgrey;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 
 .containers {
@@ -10,15 +12,53 @@
 .container-add {
   background-color: white;
   width: 75%;
-  margin: 15px;
+  margin-right: 30px;
+  border-style: solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-row {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }
 
 .container-results {
   background-color: white;
   width: 25%;
-  margin: 15px;
+  border-style: solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+hr {
+  border-top: 1px solid lightgray;
+  width: 100%;
+  margin: 0px;
+}
+
+td {
+  background-color: white;
+  padding: 5px;
+}
 .adding-full-box {
   background-color: inherit;
   display: flex;
@@ -29,24 +69,23 @@
 #product-name,
 .add {
   background-color: inherit;
-  width: 80%;
+  width: 100%;
   padding: 15px;
+  border-width: 1px;
+  border-color: lightgray;
 }
 
 .add {
   background-color: #1b86d1;
   color: white;
+  font-weight: 800;
   width: 20%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-.list-iteams {
-  width: 100%;
-  margin: 15px;
-  box-sizing: border-box;
-}
-
-h3 {
-  background-color: inherit;
-  margin: 10px;
+#product-name {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .product-item {
@@ -56,12 +95,121 @@ h3 {
   padding: 5px;
   border-radius: 5px;
 }
-.amount {
-  background-color: orange;
-  border-radius: 10px;
 
+.amount-add {
+  backround-color: lightgray;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.minus {
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  border-width: 0px;
+  box-shadow: 0 2px darkred;
+  margin: 5px;
+}
+
+.plus {
+  background-color: #1bbb44;
+  color: white;
+  font-weight: 700;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  border-width: 0px;
+  box-shadow: 0 2px green;
+  margin: 5px;
+}
+
+#minus-one {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.bought {
+  background-color: lightgray;
+  height: 25px;
+  width: 100px;
+  border-radius: 5px;
+  border-width: 0px;
+  box-shadow: 0 2px #999;
+  margin: 5px;
+}
+
+.cross {
+  background-color: red;
+  color: white;
+  font-weight: 700;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  border-width: 0px;
+  box-shadow: 0 2px darkred;
+  margin: 5px;
+}
+
+.amount-result {
+  background-color: #f27216;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
   display: inline-block;
   height: 20px;
   width: 20px;
   text-align: center;
+}
+
+.iteams {
+  background-color: white;
+  padding: 15px;
+  margin: 0px;
+}
+
+.badge {
+  position: absolute;
+  bottom: 20px;
+  left: 35px;
+  background-color: darkmagenta;
+  color: white;
+  font-weight: 700;
+  height: 30px;
+  width: 80px;
+  padding: 7px 0;
+  text-align: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-sizing: border-box;
+}
+
+.badge:hover {
+  position: absolute;
+  bottom: 25px;
+  left: 35px;
+  height: 60px;
+  width: 80px;
+  background-color: #4d01da;
+  transition: height 1s;
+  font-size: small;
+  display: block;
+  flex-wrap: wrap;
+}
+
+.badge:hover::after {
+  content: " Created by: Kateryna";
+}
+
+@media print {
+  .badge::after {
+    content: " Created by: Kateryna";
+    border-color: purple;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 }

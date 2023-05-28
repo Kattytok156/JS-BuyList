@@ -11,56 +11,71 @@
     <main class="containers">
       <section class="container-add">
         <div class="adding-full-box">
-          <input type="text" id="product-name" name="product-name" />
+          <input
+            type="text"
+            id="product-name"
+            name="product-name"
+            placeholder="Назва товару"
+          />
           <button class="add">Додати</button>
         </div>
         <hr />
-        <table class="list-iteams">
-          <tr>
-            <td>
-              <span>Помідори</span>
-            </td>
-            <td><button>-</button><span>2</span><button>+</button></td>
-            <td><button value="не куплено">не куплено</button></td>
-          </tr>
-          <tr>
-            <td>
-              <span>Печиво</span>
-            </td>
-            <td><button>-</button><span>2</span><button>+</button></td>
-            <td><button>Куплено</button><button>x</button></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Сир" /></td>
-            <td><button>-</button><span>1</span><button>+</button></td>
-            <td><button>Куплено</button><button>x</button></td>
-          </tr>
-        </table>
+        <div class="add-row">
+          <span>Помідори</span>
+          <div class="plus-amount-minus"><span class="amount-add">2</span></div>
+          <button class="bought" value="не куплено">не куплено</button>
+        </div>
+        <hr />
+        <div class="add-row">
+          <span>Печиво</span>
+          <div class="plus-amount-minus">
+            <button class="minus">-</button><span class="amount-add">2</span
+            ><button class="plus">+</button>
+          </div>
+          <div>
+            <button class="bought">Куплено</button
+            ><button class="cross">x</button>
+          </div>
+        </div>
+        <hr />
+        <div class="add-row">
+          <input type="text" placeholder="Сир" />
+          <div class="plus-amount-minus">
+            <button class="minus" id="minus-one">-</button
+            ><span class="amount-add">1</span><button class="plus">+</button>
+          </div>
+          <div>
+            <button class="bought">Куплено</button
+            ><button class="cross">x</button>
+          </div>
+        </div>
       </section>
       <section class="container-results">
-        <h3>Залишилося</h3>
+        <h3 class="iteams">Залишилося</h3>
         <hr />
-        <span class="product-item">
-          Печиво
-          <span class="amount">2</span>
-        </span>
-        <span class="product-item">
-          Сир
-          <span class="amount">1</span>
-        </span>
+        <div class="iteams">
+          <span class="product-item">
+            Печиво
+            <span class="amount-result">2</span>
+          </span>
+          <span class="product-item">
+            Сир
+            <span class="amount-result">1</span>
+          </span>
+        </div>
         <hr />
-        <h3>Куплено</h3>
+        <h3 class="iteams">Куплено</h3>
         <hr />
-        <span class="product-item">
-          Помідори
-          <span class="amount">£</span>
-        </span>
+        <div class="iteams">
+          <span class="product-item">
+            Помідори
+            <span class="amount-result">£</span>
+          </span>
+        </div>
       </section>
     </main>
-    <span class="product-item">
-      Apple
-      <span class="amount">4</span>
-    </span>
-    <input type="text" placeholder="Сир" />
+    <footer>
+      <span class="badge">Buy List</span>
+    </footer>
   </body>
 </html>
