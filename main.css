@@ -109,6 +109,7 @@ hr {
 }
 
 .add {
+  position: relative;
   background-color: #2285d0;
   color: white;
   font-weight: 800;
@@ -148,9 +149,9 @@ hr {
 }
 .minus,
 .plus {
+  position: relative;
   color: white;
   font-weight: 700;
-  font-size: medium;
   height: 30px;
   width: 32px;
   border-radius: 25px;
@@ -163,6 +164,10 @@ hr {
   background-color: #1bbb44;
 }
 
+.plus:hover::before {
+  display: block;
+}
+
 .minus {
   background-color: red;
 }
@@ -172,6 +177,7 @@ hr {
   cursor: not-allowed;
 }
 .bought {
+  position: relative;
   background-color: #efefef;
   height: 30px;
   width: 100px;
@@ -179,9 +185,11 @@ hr {
   border-radius: 5px;
   border-width: 0px;
   box-shadow: 0 2px #999;
+  margin: 2.5px;
 }
 
 .cross {
+  position: relative;
   background-color: red;
   color: white;
   font-weight: 700;
@@ -191,6 +199,7 @@ hr {
   border-radius: 5px;
   border-width: 0px;
   box-shadow: 0 2px darkred;
+  margin: 2.5px;
 }
 
 .amount-result {
@@ -218,15 +227,16 @@ hr {
 }
 
 .badge {
-  position: absolute;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
   bottom: 20px;
   left: 35px;
-  background-color: darkmagenta;
-  border: 1px solid darkmagenta;
+  background-color: #af00da;
   color: white;
   height: 30px;
   width: 90px;
-  padding: 10px 10px;
+  padding: 8px 10px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   box-sizing: border-box;
@@ -238,8 +248,14 @@ hr {
   background-color: inherit;
 }
 
+.author {
+  font-weight: normal;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
 .badge:hover {
-  position: absolute;
+  position: fixed;
   background-color: inherit;
   bottom: 25px;
   left: 35px;
@@ -252,8 +268,20 @@ hr {
 }
 
 @media print {
+  .badge {
+    background-color: transparent;
+    color: black;
+    border: 1px solid #af00da;
+    height: 40px;
+    width: 90px;
+    overflow: visible;
+  }
   .buy-list {
     display: none;
+  }
+  .author {
+    position: absolute;
+    margin-top: -5px;
   }
 }
 
@@ -270,4 +298,43 @@ hr {
   .container-add {
     width: 100%;
   }
+}
+
+.minus::before,
+.plus::before,
+.bought::before,
+.cross::before,
+.add::before {
+  content: attr(data-tooltip);
+  --scale: 0;
+  position: absolute;
+  left: 50%;
+  padding: 10px 20px;
+  font-size: x-small;
+  background-color: #af00da;
+  color: white;
+  font-weight: normal;
+  width: max-content;
+  max-width: 100%;
+  border-radius: 10px;
+  transform: translateX(-50%) translateY(-130%) scale(var(--scale));
+  transition: transform 0.5s;
+  transform-origin: bottom center;
+}
+
+.bought::before,
+.cross::before {
+  transform: translateX(-50%) translateY(-143%) scale(var(--scale));
+}
+
+.add::before {
+  transform: translateX(-50%) translateY(-160%) scale(var(--scale));
+}
+
+.minus:hover::before,
+.plus:hover::before,
+.bought:hover::before,
+.cross:hover::before,
+.add:hover::before {
+  --scale: 1;
 }
